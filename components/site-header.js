@@ -27,20 +27,41 @@ const socialLinks = [
 
 export function SiteHeader() {
   return (
-    <header className="panel-frame sticky top-3 z-20 py-1">
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-8">
-        <Link className="inline-flex min-w-0 items-center gap-3" href="/music">
-          <span className="h-3 w-3 shrink-0 rounded-full bg-[linear-gradient(135deg,var(--text),var(--accent))]" />
-          <span className="grid min-w-0 gap-0.5">
-            <strong className="truncate text-[0.86rem] uppercase tracking-[0.18em]">
-              Alexander Chieng
-            </strong>
-          </span>
-        </Link>
+    <header className="panel-frame sticky top-0 z-20 -mx-4 bg-[var(--bg)] px-4 py-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
+        <div className="flex items-center justify-between gap-4 lg:contents">
+          <Link className="inline-flex min-w-0 items-center gap-3 lg:order-1" href="/music">
+            <span className="h-3 w-3 shrink-0 rounded-full bg-[linear-gradient(135deg,var(--text),var(--accent))]" />
+            <span className="grid min-w-0 gap-0.5">
+              <strong className="truncate text-[0.86rem] uppercase tracking-[0.18em]">
+                Alexander Chieng
+              </strong>
+            </span>
+          </Link>
+
+          <div className="flex shrink-0 items-center gap-3 lg:order-3 lg:ml-8 lg:gap-4">
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+
+              return (
+                <a
+                  aria-label={link.label}
+                  className="text-[color:var(--muted)] transition duration-200 hover:text-[color:var(--text)]"
+                  href={link.href}
+                  key={link.label}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Icon className="h-4 w-4 lg:h-5 lg:w-5" />
+                </a>
+              );
+            })}
+          </div>
+        </div>
 
         <nav
           aria-label="Primary"
-          className="flex w-full flex-wrap justify-between gap-x-8 gap-y-2 lg:ml-10 lg:flex-1 lg:gap-x-12"
+          className="flex w-full flex-wrap justify-between gap-x-8 gap-y-2 border-t border-[rgba(24,21,18,0.1)] pt-3 lg:order-2 lg:ml-10 lg:flex-1 lg:border-t-0 lg:pt-0 lg:gap-x-12"
         >
           {links.map((link) => (
             <NavLink href={link.href} key={link.href}>
@@ -48,25 +69,6 @@ export function SiteHeader() {
             </NavLink>
           ))}
         </nav>
-
-        <div className="flex items-center gap-4 lg:ml-8 lg:shrink-0">
-          {socialLinks.map((link) => {
-            const Icon = link.icon;
-
-            return (
-              <a
-                aria-label={link.label}
-                className="text-[color:var(--muted)] transition duration-200 hover:text-[color:var(--text)]"
-                href={link.href}
-                key={link.label}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            );
-          })}
-        </div>
       </div>
     </header>
   );
