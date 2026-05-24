@@ -15,12 +15,13 @@ function formatTime(value) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-export function AudioPlayer({ src, title }) {
+export function AudioPlayer({ src, title, startTime = 0 }) {
   const audioRef = useRef(null);
   const playerId = useId();
+  const safeStartTime = Number.isFinite(startTime) && startTime > 0 ? startTime : 0;
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState(safeStartTime);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export function AudioPlayer({ src, title }) {
 
     if (audioRef.current.paused) {
       if (audioRef.current.ended) {
-        audioRef.current.currentTime = 0;
+        audioRef.current.currentTime = safeStartTime;
       }
 
       window.dispatchEvent(new CustomEvent(GLOBAL_PLAY_EVENT, { detail: { id: playerId } }));
@@ -75,6 +76,14 @@ export function AudioPlayer({ src, title }) {
   }
 
   function handleLoadedMetadata() {
+    if (!audioRef.current) {
+      return;
+    }
+
+    if (safeStartTime > 0 && safeStartTime < audioRef.current.duration) {
+      audioRef.current.currentTime = safeStartTime;
+    }
+
     setIsReady(true);
     syncFromAudio();
   }
@@ -93,7 +102,7 @@ export function AudioPlayer({ src, title }) {
 
   function handleEnded() {
     setIsPlaying(false);
-    setCurrentTime(0);
+    setCurrentTime(safeStartTime);
   }
 
   function handleSeek(event) {

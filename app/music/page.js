@@ -6,25 +6,29 @@ const fullSongs = [
     title: "face to face",
     collaborator: "azure",
     note: "hip-hop inflected rnb track with two distinct sections. features live strings played by myself, as well as saxophone played by andrew zhang. produced and co-written for azure.",
-    src: "/audio/full-songs/facetoface.m4a"
+    src: "/audio/full-songs/facetoface.m4a",
+    startTime: 233
   },
   {
     title: "out of time",
     collaborator: "azure",
     note: "alt-pop track with layered synths, live bass, and a focus on vocal arrangement. produced and co-written for azure.",
-    src: "/audio/full-songs/outoftime.m4a"
+    src: "/audio/full-songs/outoftime.m4a",
+    startTime: 172
   },
   {
     title: "tapestry",
     collaborator: "naveen",
     note: "afro-beat record with heavy jazz influences. inspired by isaiah falls.",
-    src: "/audio/full-songs/tapestry.m4a"
+    src: "/audio/full-songs/tapestry.m4a",
+    startTime: 80
   },
   {
     title: "temptation",
     collaborator: "naveen",
     note: "rnb track inspired by reuben james and carrtoons. features a live bass performance and layered vocal production.",
-    src: "/audio/full-songs/temptation.m4a"
+    src: "/audio/full-songs/temptation.m4a",
+    startTime: 50
   }
 ];
 
@@ -36,31 +40,36 @@ const beatGenres = [
         title: "R1.1",
         artistTags: ["Isaiah Rashad"],
         note: "dreamy, ethereal sax layered on a laid back funk groove.",
-        src: "/audio/beats/rnb/r1.m4a"
+        src: "/audio/beats/rnb/r1.m4a",
+        startTime: 22
       },
       {
         title: "R2.1",
         artistTags: ["J Dilla", "D'Angelo"],
         note: "super laid-back groove with a drunken dilla time feel.",
-        src: "/audio/beats/rnb/r2.m4a"
+        src: "/audio/beats/rnb/r2.m4a",
+        startTime: 30
       },
       {
         title: "R3.1",
         artistTags: ["Brent Faiyaz"],
         note: "acoustic guitar, synth stabs, and a bouncy groove.",
-        src: "/audio/beats/rnb/r3.m4a"
+        src: "/audio/beats/rnb/r3.m4a",
+        startTime: 15
       },
       {
         title: "R4.1",
         artistTags: ["Sam Wills", "Reuben James"],
         note: "smooth synth chords with a live bassline and jazzy drums.",
-        src: "/audio/beats/rnb/r4.m4a"
+        src: "/audio/beats/rnb/r4.m4a",
+        startTime: 30
       },
       {
         title: "R5.1",
         artistTags: ["Sam Wills", "Mac Ayres"],
         note: "spacey, ambient vibe with soft, felt acoustic piano and a trumpet sample.",
-        src: "/audio/beats/rnb/r5.m4a"
+        src: "/audio/beats/rnb/r5.m4a",
+        startTime: 0
       },
     ]
   },
@@ -71,30 +80,35 @@ const beatGenres = [
         title: "H1.1",
         artistTags: ["JID", "Mos Def"],
         note: "samples one step ahead by aretha franklin. hard-hitting drums with a lot of movement in the sample.",
-        src: "/audio/beats/hip-hop/h1.m4a"
+        src: "/audio/beats/hip-hop/h1.m4a",
+        startTime: 23
       },
       {
         title: "H2.2",
         artistTags: ["Mos Def", "Common"],
         note: "boom bap style beat with a jazzy piano sample and strings",
-        src: "/audio/beats/hip-hop/h2.m4a"
+        src: "/audio/beats/hip-hop/h2.m4a",
+        startTime: 0
       },
       {
         title: "love takes over",
         artistTags: ["Kendrick Lamar"],
         note: "inspired by duckworth on DAMN",
-        src: "/audio/beats/hip-hop/lovetakesover.m4a"
+        src: "/audio/beats/hip-hop/lovetakesover.m4a",
+        startTime: 40
       },
       {
         title: "love u too",
         artistTags: ["J Dilla"],
         note: "heavily inspired by dilla's sound on donuts.",
-        src: "/audio/beats/hip-hop/loveutoo.m4a"
+        src: "/audio/beats/hip-hop/loveutoo.m4a",
+        startTime: 40
       },
       {
         title: "no more",
         note: "some of my favourite drums i've programmed.",
-        src: "/audio/beats/hip-hop/nomore.m4a"
+        src: "/audio/beats/hip-hop/nomore.m4a",
+        startTime: 20
       }
     ]
   },
@@ -105,18 +119,21 @@ const beatGenres = [
         title: "T1.1",
         artistTags: ["Drake", "Bryson Tiller"],
         note: "made in a hotel room in munich. samples vocals from face to face.",
-        src: "/audio/beats/trap/t1.m4a"
+        src: "/audio/beats/trap/t1.m4a",
+        startTime: 12
       },
       {
         title: "T2.1",
         artistTags: ["Saba"],
         note: "jazz-influenced trap beat with a piano/sax sample. made on the plane back from budapest",
-        src: "/audio/beats/trap/t2.m4a"
+        src: "/audio/beats/trap/t2.m4a",
+        startTime: 19
       },
       {
         title: "T3.1",
         note: "smooth, sliding trap beat. made for a beat battle game.",
-        src: "/audio/beats/trap/bb7.m4a"
+        src: "/audio/beats/trap/bb7.m4a",
+        startTime: 0
       }
     ]
   },
@@ -127,13 +144,15 @@ const beatGenres = [
         title: "P1.1",
         artistTags: ["Dua Lipa", "Magdalena Bay"],
         note: "clean drums, and lots and lots of space. one of my favourite beats i've made",
-        src: "/audio/beats/pop/p1.m4a"
+        src: "/audio/beats/pop/p1.m4a",
+        startTime: 37
       },
       {
         title: "P2",
         artistTags: ["The Marias", "Tame Impala"],
         note: "dreamy indie pop beat. acoustic drums and lots of synths.",
-        src: "/audio/beats/pop/p2.m4a"
+        src: "/audio/beats/pop/p2.m4a",
+        startTime: 120
       }
     ]
   }
@@ -204,7 +223,11 @@ export default function MusicPage() {
                         </div>
                       ) : null}
                       <p className="body-copy mt-4 text-[0.98rem]">{beat.note}</p>
-                      <AudioPlayer src={beat.src} title={beat.title} />
+                      <AudioPlayer
+                        src={beat.src}
+                        startTime={beat.startTime}
+                        title={beat.title}
+                      />
                     </article>
                   ))}
                 </div>
@@ -243,7 +266,11 @@ export default function MusicPage() {
                     {song.title}
                   </h3>
                   <p className="body-copy mt-4 max-w-2xl text-[0.98rem]">{song.note}</p>
-                  <AudioPlayer src={song.src} title={song.title} />
+                  <AudioPlayer
+                    src={song.src}
+                    startTime={song.startTime}
+                    title={song.title}
+                  />
                 </article>
               ))}
             </div>
