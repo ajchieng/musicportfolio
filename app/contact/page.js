@@ -11,7 +11,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <section className="section-stack">
-      <p className="body-copy mt-5 max-w-2xl">
+      <p className="body-copy max-w-2xl">
         feel free to reach out if you have a project in mind, want to collaborate, or just want to say hi. 
       </p>
 

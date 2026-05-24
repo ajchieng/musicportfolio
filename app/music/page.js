@@ -86,14 +86,14 @@ const beatGenres = [
       {
         title: "H2.2",
         artistTags: ["Mos Def", "Common"],
-        note: "boom bap style beat with a jazzy piano sample and strings",
+        note: "boom bap style beat with a jazzy piano sample and strings.",
         src: "/audio/beats/hip-hop/h2.m4a",
         startTime: 0
       },
       {
         title: "love takes over",
         artistTags: ["Kendrick Lamar"],
-        note: "inspired by duckworth on DAMN",
+        note: "9th wonder style boom bap beat with a soulful vocal sample.",
         src: "/audio/beats/hip-hop/lovetakesover.m4a",
         startTime: 40
       },
@@ -125,7 +125,7 @@ const beatGenres = [
       {
         title: "T2.1",
         artistTags: ["Saba"],
-        note: "jazz-influenced trap beat with a piano/sax sample. made on the plane back from budapest",
+        note: "jazz-influenced trap beat with a piano/sax sample. made on the plane back from budapest.",
         src: "/audio/beats/trap/t2.m4a",
         startTime: 19
       },
@@ -143,14 +143,14 @@ const beatGenres = [
       {
         title: "P1.1",
         artistTags: ["Dua Lipa", "Magdalena Bay"],
-        note: "clean drums, and lots and lots of space. one of my favourite beats i've made",
+        note: "clean drums, and lots and lots of space. one of my favourite beats i've made.",
         src: "/audio/beats/pop/p1.m4a",
         startTime: 37
       },
       {
         title: "P2",
         artistTags: ["The Marias", "Tame Impala"],
-        note: "dreamy indie pop beat. acoustic drums and lots of synths.",
+        note: "dreamy indie pop beat with acoustic drums and lots of synths.",
         src: "/audio/beats/pop/p2.m4a",
         startTime: 120
       }
@@ -168,7 +168,7 @@ export default function MusicPage() {
       <h1 className="page-title mt-3">portfolio</h1>
       <p className="body-copy mt-5 max-w-3xl">
         songs and beats that i&apos;ve written and produced, either solo or in collaboration
-        with other artists
+        with other artists.
       </p>
 
       <div className="music-section mt-16">
