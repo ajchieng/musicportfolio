@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata = {
   title: "alex chieng | producer",
-  description: "Minimalist music production portfolio for Alexander Chieng."
+  description: "Production Portfolio"
 };
 
 export default function RootLayout({ children }) {
