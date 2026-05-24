@@ -1,17 +1,18 @@
 import { AudioPlayer } from "@/components/audio-player";
+import { DisclosureSection } from "@/components/disclosure-section";
 
 const fullSongs = [
   {
     title: "face to face",
     collaborator: "azure",
     note: "hip-hop inflected rnb track with two distinct sections. features live strings played by myself, as well as saxophone played by andrew zhang. produced and co-written for azure.",
-    src: "/audio/full-songs/facetoface.wav"
+    src: "/audio/full-songs/facetoface.m4a"
   },
   {
     title: "out of time",
     collaborator: "azure",
     note: "alt-pop track with layered synths, live bass, and a focus on vocal arrangement. produced and co-written for azure.",
-    src: "/audio/full-songs/outoftime.wav"
+    src: "/audio/full-songs/outoftime.m4a"
   },
   {
     title: "tapestry",
@@ -28,6 +29,75 @@ const fullSongs = [
 ];
 
 const beatGenres = [
+  {
+    genre: "R&B",
+    beats: [
+      {
+        title: "R1.1",
+        artistTags: ["Isaiah Rashad"],
+        note: "dreamy, ethereal sax layered on a laid back funk groove.",
+        src: "/audio/beats/rnb/r1.m4a"
+      },
+      {
+        title: "R2.1",
+        artistTags: ["J Dilla", "D'Angelo"],
+        note: "super laid-back groove with a drunken dilla time feel.",
+        src: "/audio/beats/rnb/r2.m4a"
+      },
+      {
+        title: "R3.1",
+        artistTags: ["Brent Faiyaz"],
+        note: "acoustic guitar, synth stabs, and a bouncy groove.",
+        src: "/audio/beats/rnb/r3.m4a"
+      },
+      {
+        title: "R4.1",
+        artistTags: ["Sam Wills", "Reuben James"],
+        note: "smooth synth chords with a live bassline and jazzy drums.",
+        src: "/audio/beats/rnb/r4.m4a"
+      },
+      {
+        title: "R5.1",
+        artistTags: ["Sam Wills", "Mac Ayres"],
+        note: "spacey, ambient vibe with soft, felt acoustic piano and a trumpet sample.",
+        src: "/audio/beats/rnb/r5.m4a"
+      },
+    ]
+  },
+  {
+    genre: "Hip-Hop",
+    beats: [
+      {
+        title: "H1.1",
+        artistTags: ["JID", "Mos Def"],
+        note: "samples one step ahead by aretha franklin. hard-hitting drums with a lot of movement in the sample.",
+        src: "/audio/beats/hip-hop/h1.m4a"
+      },
+      {
+        title: "H2.2",
+        artistTags: ["Mos Def", "Common"],
+        note: "boom bap style beat with a jazzy piano sample and strings",
+        src: "/audio/beats/hip-hop/h2.m4a"
+      },
+      {
+        title: "love takes over",
+        artistTags: ["Kendrick Lamar"],
+        note: "inspired by duckworth on DAMN",
+        src: "/audio/beats/hip-hop/lovetakesover.m4a"
+      },
+      {
+        title: "love u too",
+        artistTags: ["J Dilla"],
+        note: "heavily inspired by dilla's sound on donuts.",
+        src: "/audio/beats/hip-hop/loveutoo.m4a"
+      },
+      {
+        title: "no more",
+        note: "some of my favourite drums i've programmed.",
+        src: "/audio/beats/hip-hop/nomore.m4a"
+      }
+    ]
+  },
   {
     genre: "Trap",
     beats: [
@@ -59,49 +129,11 @@ const beatGenres = [
         note: "clean drums, and lots and lots of space. one of my favourite beats i've made",
         src: "/audio/beats/pop/p1.m4a"
       },
-    ]
-  },
-  {
-    genre: "R&B",
-    beats: [
       {
-        title: "Beat Title Five",
-        artistTags: ["SZA", "Brent Faiyaz"],
-        note: "Soft synth layers, restrained low end, and intimate groove.",
-        src: "/audio/beats/rnb/beat-title-five.mp3"
-      },
-      {
-        title: "Beat Title Six",
-        artistTags: ["Summer Walker", "Giveon"],
-        note: "Moody chords with a slow-burn pocket and vocal space.",
-        src: "/audio/beats/rnb/beat-title-six.mp3"
-      }
-    ]
-  },
-  {
-    genre: "Hip-Hop",
-    beats: [
-      {
-        title: "H1.1",
-        artistTags: ["JID", "Mos Def"],
-        note: "samples one step ahead by aretha franklin. hard-hitting drums with a lot of movement in the sample.",
-        src: "/audio/beats/hip-hop/beat-title-seven.mp3"
-      },
-      {
-        title: "love u too",
-        artistTags: ["J Dilla"],
-        note: "heavily inspired by dilla's sound on donuts.",
-        src: "/audio/beats/hip-hop/beat-title-eight.mp3"
-      },
-      {
-        title: "no more",
-        note: "some of my favourite drums i've programmed.",
-        src: "/audio/beats/hip-hop/beat-title-eight.mp3"
-      },
-      {
-        title: "no more",
-        note: "some of my favourite drums i've programmed.",
-        src: "/audio/beats/hip-hop/beat-title-eight.mp3"
+        title: "P2",
+        artistTags: ["The Marias", "Tame Impala"],
+        note: "dreamy indie pop beat. acoustic drums and lots of synths.",
+        src: "/audio/beats/pop/p2.m4a"
       }
     ]
   }
@@ -121,81 +153,39 @@ export default function MusicPage() {
         with other artists
       </p>
 
-      <div className="mt-16">
+      <div className="music-section mt-16">
         <div className="grid gap-6 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-12">
           <div>
-            <h2 className="mt-3 font-display text-4xl leading-none text-[color:var(--text)] sm:text-5xl">
-              full songs
-            </h2>
-          </div>
-
-          <div className="grid gap-y-12">
-            {fullSongs.map((song) => (
-              <article className="surface-card" key={song.title}>
-                <p className="eyebrow">{song.collaborator}</p>
-                <h3 className="mt-3 font-display text-3xl leading-none text-[color:var(--text)] sm:text-4xl">
-                  {song.title}
-                </h3>
-                <p className="body-copy mt-4 max-w-2xl text-[0.98rem]">{song.note}</p>
-                <AudioPlayer src={song.src} title={song.title} />
-                <p className="mt-3 text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
-                  {song.src}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-24">
-        <div className="grid gap-6 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-12">
-          <div>
-            <h2 className="mt-3 font-display text-4xl leading-none text-[color:var(--text)] sm:text-5xl">
+            <p className="eyebrow">01 / beats</p>
+            <h2 className="mt-4 font-display text-4xl leading-none text-[color:var(--text)] sm:text-5xl">
               beats
             </h2>
+            <p className="body-copy mt-4 text-sm">
+              instrumentals grouped by genre
+            </p>
           </div>
 
           <div className="grid gap-y-5">
-            {beatGenres.map((group, groupIndex) => (
-              <details
-                className="genre-disclosure surface-card rounded-[1.75rem] border border-[color:rgba(24,21,18,0.1)] px-5 py-5 sm:px-7"
+            {beatGenres.map((group) => (
+              <DisclosureSection
+                countLabel={`${group.beats.length} ${group.beats.length === 1 ? "beat" : "beats"}`}
+                eyebrow={group.genre}
                 key={group.genre}
-                open={groupIndex === 0}
               >
-                <summary className="genre-disclosure-summary flex cursor-pointer list-none items-center justify-between gap-4">
-                  <div>
-                    <p className="eyebrow">{group.genre}</p>
-                    <p className="mt-3 text-sm uppercase tracking-[0.16em] text-[color:var(--muted)]">
-                      {group.beats.length} {group.beats.length === 1 ? "beat" : "beats"}
-                    </p>
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    className="genre-disclosure-icon inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:rgba(24,21,18,0.12)] text-[color:var(--muted)] transition-transform duration-200"
-                  >
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6 9L12 15L18 9"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.6"
-                      />
-                    </svg>
-                  </span>
-                </summary>
-
-                <div className="mt-8 grid gap-x-10 gap-y-10 md:grid-cols-2">
+                <div className="music-entry-grid mt-8 grid gap-x-10 md:grid-cols-2">
                   {group.beats.map((beat, beatIndex) => (
-                    <article key={`${group.genre}-${beat.title}-${beatIndex}`}>
-                      <h3 className="font-display text-3xl leading-none text-[color:var(--text)]">
-                        {beat.title}
-                      </h3>
+                    <article
+                      className="music-entry surface-card"
+                      key={`${group.genre}-${beat.title}-${beatIndex}`}
+                    >
+                      <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                        <h3 className="font-display text-3xl leading-none text-[color:var(--text)]">
+                          {beat.title}
+                        </h3>
+                        <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
+                          beat
+                        </p>
+                      </div>
                       {beat.artistTags?.length ? (
                         <div className="mt-4">
                           <p className="eyebrow">Artist reference tags</p>
@@ -215,15 +205,49 @@ export default function MusicPage() {
                       ) : null}
                       <p className="body-copy mt-4 text-[0.98rem]">{beat.note}</p>
                       <AudioPlayer src={beat.src} title={beat.title} />
-                      <p className="mt-3 text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
-                        {beat.src}
-                      </p>
                     </article>
                   ))}
                 </div>
-              </details>
+              </DisclosureSection>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="music-section mt-24">
+        <div className="grid gap-6 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-12">
+          <div>
+            <p className="eyebrow">02 / songs</p>
+            <h2 className="mt-4 font-display text-4xl leading-none text-[color:var(--text)] sm:text-5xl">
+              songs
+            </h2>
+            <p className="body-copy mt-4 text-sm">
+              full productions and artist records
+            </p>
+          </div>
+
+          <DisclosureSection
+            countLabel={`${fullSongs.length} ${fullSongs.length === 1 ? "song" : "songs"}`}
+            eyebrow="full songs"
+          >
+            <div className="music-entry-list mt-8">
+              {fullSongs.map((song) => (
+                <article className="music-entry surface-card" key={song.title}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <p className="eyebrow">{song.collaborator}</p>
+                    <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
+                      song
+                    </p>
+                  </div>
+                  <h3 className="mt-3 font-display text-3xl leading-none text-[color:var(--text)] sm:text-4xl">
+                    {song.title}
+                  </h3>
+                  <p className="body-copy mt-4 max-w-2xl text-[0.98rem]">{song.note}</p>
+                  <AudioPlayer src={song.src} title={song.title} />
+                </article>
+              ))}
+            </div>
+          </DisclosureSection>
         </div>
       </div>
     </section>
