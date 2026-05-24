@@ -14,8 +14,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <section className="section-stack">
-      <h1 className="page-title mt-3">about</h1>
-
       <div className="mt-10 max-w-3xl">
         <p className="body-copy">
           i&apos;m alex, a producer with a classical violin and jazz piano background. i've been making beats and producing songs for around 5 years, and i'm always looking to collaborate with artists from any genre! please reach out to me if you'd like to use any of my beats, or if you'd like to send you any of the (hundreds) more beats i've made.

@@ -11,8 +11,6 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <section className="section-stack">
-      <p className="eyebrow">Contact</p>
-      <h1 className="page-title mt-3">start a project</h1>
       <p className="body-copy mt-5 max-w-2xl">
         feel free to reach out if you have a project in mind, want to collaborate, or just want to say hi. 
       </p>

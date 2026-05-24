@@ -165,7 +165,6 @@ export const metadata = {
 export default function MusicPage() {
   return (
     <section className="section-stack">
-      <p className="eyebrow">Music</p>
       <h1 className="page-title mt-3">portfolio</h1>
       <p className="body-copy mt-5 max-w-3xl">
         songs and beats that i&apos;ve written and produced, either solo or in collaboration
