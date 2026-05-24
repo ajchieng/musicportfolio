@@ -57,6 +57,21 @@ body {
   }
 }
 
+.site-header {
+  border: 1px solid rgba(24, 21, 18, 0.1);
+  border-radius: 1.4rem;
+  background: rgba(247, 243, 236, 0.78);
+  box-shadow: 0 12px 36px rgba(24, 21, 18, 0.06);
+  padding: 0.85rem 1rem;
+  backdrop-filter: blur(18px);
+}
+
+@supports not (backdrop-filter: blur(18px)) {
+  .site-header {
+    background: rgba(247, 243, 236, 0.96);
+  }
+}
+
 .music-section {
   border-top: 1px solid rgba(24, 21, 18, 0.16);
   padding-top: 2rem;

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { NavLink } from "@/components/nav-link";
 
 const links = [
-  { href: "/about", label: "About" },
   { href: "/music", label: "Music" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ];
 
@@ -27,7 +27,7 @@ const socialLinks = [
 
 export function SiteHeader() {
   return (
-    <header className="panel-frame sticky top-3 z-20 py-1">
+    <header className="site-header panel-frame sticky top-3 z-20">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-8">
         <Link className="inline-flex min-w-0 items-center gap-3" href="/music">
           <span className="h-3 w-3 shrink-0 rounded-full bg-[linear-gradient(135deg,var(--text),var(--accent))]" />
