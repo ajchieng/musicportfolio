@@ -19,7 +19,7 @@ const socialLinks = [
     icon: InstagramIcon
   },
   {
-    href: "https://soundcloud.com/chiengchiengchieng",
+    href: "https://on.soundcloud.com/4oT6nZU5IMQ2JGQRh3",
     label: "SoundCloud",
     icon: SoundCloudIcon
   }
